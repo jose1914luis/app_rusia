@@ -37,7 +37,7 @@ export class ListPage {
     }
   };
 
-  cargar = true;
+  cargar = false;
   mensaje = '';
   proxy = '/api';
 
@@ -60,6 +60,12 @@ export class ListPage {
       this.conectarApp(false);
     }
     //this.conectarApp(false);*/
+    this.loginSinDatos();
+    
+  }
+
+  loginSinDatos(){
+
     var self = this;
     var odoo_api = new OdooApi('http://moscutourgratis.com:8069', 'Tour_Gratis_Rusia');
     //var deferred = $q.defer();
@@ -81,10 +87,7 @@ export class ListPage {
           console.log('error');
        }
     );
-  }
-
-  loginSinDatos(){
-    var self = this;
+    /*var self = this;
     this.storage.get('res.users').then((val) => {
        if(val == null){//no existe datos
          
@@ -94,7 +97,7 @@ export class ListPage {
          self.navCtrl.setRoot(HomePage);
        }
        self.cargar = false;
-    });
+    });*/
   } 
    
   conectarApp(verificar){        
