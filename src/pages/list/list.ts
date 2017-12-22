@@ -72,19 +72,19 @@ export class ListPage {
     odoo_api.login('jose1914luis@gmail.com', 'Tour2018').then(
        function(uid) {
           console.log(uid);
-          self.mensaje += JSON.stringify(uid);
+          self.mensaje += uid;
           odoo_api.search('res.users', [['login', '=', 'jose1914luis@gmail.com']]).then(
              function(ids) {
-                  self.mensaje += JSON.stringify(ids);
+                  self.mensaje += ids;
                   console.log(ids);
              }, 
              function() {
-                   console.log('error');
+                   console.log('error mostrando ids');
              }
           );
        }, 
        function() {
-          console.log('error');
+          console.log('error tranando de conectarme');
        }
     );
     /*var self = this;
