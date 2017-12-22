@@ -40,6 +40,7 @@ export class ListPage {
   cargar = false;
   mensaje = '';
   proxy = '/api';
+  //proxy = 'http://moscutourgratis.com:8069';
 
   constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, private storage: Storage, public alertCtrl: AlertController, private network: Network) {       
 
@@ -67,7 +68,7 @@ export class ListPage {
   loginSinDatos(){
 
     var self = this;
-    var odoo_api = new OdooApi('http://moscutourgratis.com:8069', 'Tour_Gratis_Rusia');
+    var odoo_api = new OdooApi(this.proxy, 'Tour_Gratis_Rusia');
     self.mensaje += '>>';
     odoo_api.login('jose1914luis@gmail.com', 'Tour2018').then(
        function(uid) {
