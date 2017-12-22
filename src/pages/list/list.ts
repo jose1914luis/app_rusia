@@ -68,7 +68,7 @@ export class ListPage {
 
     var self = this;
     var odoo_api = new OdooApi('http://moscutourgratis.com:8069', 'Tour_Gratis_Rusia');
-    //var deferred = $q.defer();
+    self.mensaje += '>>';
     odoo_api.login('jose1914luis@gmail.com', 'Tour2018').then(
        function(uid) {
           console.log(uid);
