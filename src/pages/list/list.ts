@@ -81,11 +81,13 @@ export class ListPage {
              }, 
              function() {
                    console.log('error mostrando ids');
+                    self.mensaje += 'error mostrando ids';
              }
           );
        }, 
        function() {
           console.log('error tranando de conectarme');
+            self.mensaje += 'error tranando de conectarme';
        }
     );
     /*var self = this;
